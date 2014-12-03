@@ -1,0 +1,33 @@
+package prac;
+
+public class Employee {
+
+	private String name;
+	private int salary = 0;
+	private Bank owner;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+	
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public Bank getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Bank owner) {
+		this.owner = owner;
+	}
+
+}
