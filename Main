@@ -1,0 +1,51 @@
+package prac;
+
+import java.util.ArrayList;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		ArrayList<Employee> lista = new ArrayList<Employee>();
+		Bank x = new Bank();
+		Employee a = new Employee();
+		Employee b = new Employee();
+		Employee c = new Employee();
+
+		lista.add(a);
+		lista.add(b);
+		lista.add(c);
+
+		a.setName("Data-Matte");
+		b.setName("Rolf");
+		c.setName("Hacker Hans");
+
+		a.setSalary(600);
+		b.setSalary(100);
+		c.setSalary(1100);
+
+		a.setOwner(x);
+		b.setOwner(x);
+		c.setOwner(x);
+
+		x.setName("Bank of Kony");
+		x.addEmployee(a);
+		x.addEmployee(b);
+		x.addEmployee(c);
+
+		int allExpenses = expenses(lista, "Employee");
+		System.out.println(x.getName() + " pays its employees a total of €"
+				+ allExpenses + " every hour.");
+	}
+
+	public static int expenses(ArrayList<Employee> L, String klass) {
+		int total = 0;
+		for (Employee tmp : L) {
+			if (tmp.getClass().getSimpleName().equals(klass)) {
+				total += tmp.getSalary();
+			}
+		}
+		return total;
+	}
+
+}
